@@ -69,13 +69,30 @@ class TransfersPage extends StatelessWidget {
       ),
       appBar: AppBar(
         title: const Text("Transferências"),
-        backgroundColor: Colors.blue, // Define a cor de fundo da AppBar
-        iconTheme: const IconThemeData(color: Colors.white), toolbarTextStyle: const TextTheme(
-          titleLarge: TextStyle(color: Colors.white), // Define a cor do texto do título
-        ).bodyMedium, titleTextStyle: const TextTheme(
-          titleLarge: TextStyle(color: Colors.white), // Define a cor do texto do título
+        backgroundColor: Colors.blue,
+        iconTheme: const IconThemeData(color: Colors.white),
+        toolbarTextStyle: const TextTheme(
+          titleLarge: TextStyle(color: Colors.white),
+        ).bodyMedium,
+        titleTextStyle: const TextTheme(
+          titleLarge: TextStyle(color: Colors.white),
         ).titleLarge,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Adicione a lógica desejada ao pressionar o botão de acrescentar
+          // Neste exemplo, apenas exibiremos um snackbar.
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Botão de Acrescentar pressionado'),
+            ),
+          );
+        },
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white, // Cor do ícone do botão flutuante
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
